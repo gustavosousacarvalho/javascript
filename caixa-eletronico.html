@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Eletronico</title>
+    <style>
+        body {
+            background: #5f5fc0;
+            color: white;
+        }
+
+        h2,
+        h3 {
+            text-align: center;
+        }
+
+        .conteiner {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .item {
+            display: flex;
+            width: 300px;
+            flex-direction: column;
+            align-items: center;
+
+
+        }
+
+        .tela-saldo {
+            background: cornsilk;
+            width: 100%;
+            padding: 15px;
+            padding-bottom: 50px;
+            border: radius 5px;
+            color: #080969;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        var saldo = 11000;
+        function exibeSaldo() {
+            document.getElementById("saldo").innerHTML = saldo.toLocaleString("pt-br", { style: "currency", currency: "BRL" })
+        }
+        function saqueValor(valor) {
+            saldo = saldo - valor;
+            // exibeSaldo();
+        }
+        window.onload = function () {
+            exibeSaldo();
+        }
+    </script>
+
+</head>
+
+<body>
+    <h2>Caixa Rápido</h2>
+    <h3>Escolha o valor para saque</h3>
+    <div class="conteiner">
+        <div class="item">
+            <button onclick="saqueValor(20)">R$ 20,00</button>
+            <button onclick="saqueValor(40)">R$ 40,00</button>
+            <button onclick="saqueValor(50)">R$ 50,00</button>
+            <button onclick="saqueValor(100)">R$ 100,00</button>
+        </div>
+        <div class="item">
+            <div class="tela-saldo">
+                <label>Saldo:</label>
+                <label id="saldo">0,00</label>
+            </div>
+        </div>
+        <div class="item">
+            <button onclick="saqueValor(300)">R$ 300,00</button>
+            <button onclick="saqueValor(500)">R$ 500,00</button>
+            <button onclick="saqueValor(900)">R$ 900,00</button>
+            <button>Digitar valor</button>
+        </div>
+    </div>
+</body>
+
+</html>
