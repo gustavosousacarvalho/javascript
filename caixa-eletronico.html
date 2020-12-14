@@ -53,8 +53,16 @@
             document.getElementById("saldo").innerHTML = saldo.toLocaleString("pt-br", { style: "currency", currency: "BRL" })
         }
         function saqueValor(valor) {
-            saldo = saldo - valor;
-            // exibeSaldo();
+            if (valor <= saldo) {
+                saldo = saldo - valor;
+                exibeSaldo();
+            }else{
+                alert("Saldo insuficiente")
+            }
+        }
+        function valorDigitado() {
+            var valor = prompt("valor do saque");
+            saqueValor(Math.abs(valor))
         }
         window.onload = function () {
             exibeSaldo();
@@ -83,7 +91,7 @@
             <button onclick="saqueValor(300)">R$ 300,00</button>
             <button onclick="saqueValor(500)">R$ 500,00</button>
             <button onclick="saqueValor(900)">R$ 900,00</button>
-            <button>Digitar valor</button>
+            <button onclick="valorDigitado()">Digitar valor</button>
         </div>
     </div>
 </body>
