@@ -9,11 +9,11 @@
 </head>
 <body>
   <div class="calculadora">
-      <input id="tela" type="number" class="tela" value="0">
+      <input id="tela" type="text" class="tela" value="0">
       <div class="botoes">
 <input type="button" value="AC" class="botao-vermelho">
 <input type="button" value="CE" class="botao-laranja" onclick="limparTela()">
-<input type="button" value="%">
+<input type="button" value="%" onclick="porcentagem()">
 <input type="button" value=":" onclick="operacao(':')">
 <input type="button" value="7" onclick="preencheValor(7)">
 <input type="button" value="8" onclick="preencheValor(8)">
@@ -28,7 +28,7 @@
 <input type="button" value="3" onclick="preencheValor(3)">
 <input type="button" value="+" onclick="operacao('+')">
 <input type="button" value="0" onclick="preencheValor(0)">
-<input type="button" value=",">
+<input type="button" value="." onclick="preencheValor('.')">
 <input type="button" value="=" class="botao-verde" onclick="calcula('=')">
       </div>
   </div>
