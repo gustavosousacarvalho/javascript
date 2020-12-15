@@ -1,0 +1,36 @@
+.calculadora{
+    width: 320px;
+    height: 420px;
+    background: #0e0ee0;
+    margin: 50px auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+.tela{
+    width: 85%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align:right ;
+}
+.botoes{
+    padding: 5px;
+}
+.botoes input{
+    padding: 15px;
+    margin: 5px;
+    width: 60px;
+    text-align: center;
+    background: #58a1dd;
+    color: white;
+    font-size: 20px;
+}
+.botao-vermelho{
+    background: red !important;
+}
+.botao-laranja{
+    background: orange !important;
+}
+.botao-verde{
+    background: green !important;
+}

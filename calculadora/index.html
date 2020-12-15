@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="calculadora.js"></script>
+</head>
+<body>
+  <div class="calculadora">
+      <input id="tela" type="number" class="tela" value="0">
+      <div class="botoes">
+<input type="button" value="AC" class="botao-vermelho">
+<input type="button" value="CE" class="botao-laranja" onclick="limparTela()">
+<input type="button" value="%">
+<input type="button" value=":" onclick="operacao(':')">
+<input type="button" value="7" onclick="preencheValor(7)">
+<input type="button" value="8" onclick="preencheValor(8)">
+<input type="button" value="9" onclick="preencheValor(9)">
+<input type="button" value="x" onclick="operacao('x')">
+<input type="button" value="4" onclick="preencheValor(4)">
+<input type="button" value="5" onclick="preencheValor(5)">
+<input type="button" value="6" onclick="preencheValor(6)">
+<input type="button" value="-" onclick="operacao('-')">
+<input type="button" value="1" onclick="preencheValor(1)">
+<input type="button" value="2" onclick="preencheValor(2)">
+<input type="button" value="3" onclick="preencheValor(3)">
+<input type="button" value="+" onclick="operacao('+')">
+<input type="button" value="0" onclick="preencheValor(0)">
+<input type="button" value=",">
+<input type="button" value="=" class="botao-verde" onclick="calcula('=')">
+      </div>
+  </div>
+</body>
+</html>
