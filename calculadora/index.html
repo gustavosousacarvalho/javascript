@@ -9,9 +9,9 @@
 </head>
 <body>
   <div class="calculadora">
-      <input id="tela" type="text" class="tela" value="0">
+      <input id="tela" type="text" class="tela" value="0" readonly />
       <div class="botoes">
-<input type="button" value="AC" class="botao-vermelho">
+<input type="button" value="AC" class="botao-vermelho" onclick="limparTela()">
 <input type="button" value="CE" class="botao-laranja" onclick="limparTela()">
 <input type="button" value="%" onclick="porcentagem()">
 <input type="button" value=":" onclick="operacao(':')">

@@ -18,4 +18,6 @@
     * Adição (+)
     * Subtração (-)
     * multiplicação (*)
-    * divisão (/)   
+    * divisão (/)  
+    * porcentagem (percent * valor)/100
+    * modulo (%) 
