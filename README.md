@@ -1,6 +1,8 @@
 # javascript
 
-[Acesse o site](https://gustavosousacarvalho.github.io/javascript/)
+[Projeto calculadora](https://gustavosousacarvalho.github.io/javascript/calculadora)
+
+[Acesse o site](https://gustavosousacarvalho.github.io/javascript/caixa-eletronico)
 
 * Tipos de variaveis
     * String
