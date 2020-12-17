@@ -12,8 +12,8 @@
 <body>
     <div class="container">
         <div class="item">
-            <h2>Supermercado Bem Barato</h2>
-            <table>
+            <h2 class="mercado-nome">Supermercado Bem Barato</h2>
+            <table class="produtos">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -31,63 +31,92 @@
                     </tr>
                 </tbody>
             </table>
-            <label>TOTAL</label>
-            <input type="text">
+            <div class="display-total">
+                <label class="label-total">TOTAL</label>
+                <input type="text" value="73,90" class="total">
+            </div>
 
 
         </div>
-        <div class="item">
-            <h1 class="status">Caixa Aberto</h1>
+        <div class="item item2">
+            <h1 class="caixa-status">Caixa Aberto</h1>
             <img src="imgs/coca-cola.jpg" height="100px">
             <div class="container">
                 <div class="item">
-                    <label>Codigo de Barra</label>
-                    <input type="number">
+                    <label>Produto</label>
+                    <select>
+                        <option value="coca cola">1 coca cola</option>
+                        <option value="2">2 feijão</option>
+                    </select>
                 </div>
                 <div class="item">
                     <label>Quantidade</label>
                     <input type="number">
                 </div>
             </div>
-            <h3>REFR COCA COLA LATA 350ML</h3>
-
-
+            <div class="container">
+                <h3 class="color-refri">REFR COCA COLA LATA 350ML</h3>
+            </div>
             <div class="container">
                 <div class="item">
                     <h4>Valor Unitario</h4>
                 </div>
                 <div class="item">
-                    <H4>2,90</H4>
+                    <H4 class="cor-preco">2,90</H4>
                 </div>
             </div>
             <div class="container">
                 <div class="item">
-                    <table>
+                    <table class="cor-comandos">
                         <tbody>
                             <tr>
-                                <td>001</td>
-                                <td>coca cola</td>
+                                <td>F2</td>
+                                <td>Cunsulta de preços</td>
                             </tr>
                             <tr>
-                                <td>002</td>
-                                <td>feijão</td>
+                                <td>F5</td>
+                                <td>Finalizar compra</td>
+                            </tr>
+                            <tr>
+                                <td>F8</td>
+                                <td>Cancelar produto</td>
+                            </tr>
+                            <tr>
+                                <td>F9</td>
+                                <td>Cancelar toda venda</td>
+                            </tr>
+                            <tr>
+                                <td>F10</td>
+                                <td>Sair da tela de caixa</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="item">
-                    <table>
-                    <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td>coca cola</td>
-                        </tr>
-                        <tr>
-                            <td>002</td>
-                            <td>feijão</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <table class="informacoes">
+                        <tbody>
+                            <tr>
+                                <td>Caixa</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Operador</td>
+                                <td>Gustavo</td>
+                            </tr>
+                            <tr>
+                                <td>Data</td>
+                                <td>17/12/2020</td>
+                            </tr>
+                            <tr>
+                                <td>Horas</td>
+                                <td>11:10</td>
+                            </tr>
+                            <tr>
+                                <td>Conexão</td>
+                                <td>Em Rede</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

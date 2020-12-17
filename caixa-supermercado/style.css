@@ -1,8 +1,83 @@
-.container{
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+.container {
     display: flex;
+    max-width: 1200px;
+    padding: 10px;
+}
+
+.item {
+    flex: 1;
+}
+
+.mercado-nome {
+    color: #050591;
+    text-transform: uppercase;
+}
+
+.caixa-status {
+    text-align: center;
+    color: #b60b0b;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.produtos, .produtos td, .produtos th {
+    border: 1px solid gray;
+}
+
+.produtos {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.total {
+    text-align: right;
+    color: #070785;
+    font-weight: bold;
+    font-size: 20px;
+    width: 130px;
+    float: right;
+}
+
+.label-total {
+    color: #06067a;
+    font-weight: bold;
+}
+
+.display-total {
+    display: flex;
+    background: #21e2e2;
+    height: 30px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.item2{
+    background: #a5b6e4;
+}
+
+.color-refri{
+    color: red;
 
 }
-.item{
-    flex: 1;
 
+.cor-preco{
+    color: red;
+}
+
+.cor-comandos{
+    background: #0f836a;
+}
+
+.informacoes{
+    background: #0f836a; 
 }
