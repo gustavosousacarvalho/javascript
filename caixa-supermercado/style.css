@@ -10,6 +10,7 @@ h1,h2,h3,h4,h5,h6{
 
 .item {
     flex: 1;
+    margin-right: 10px;
 }
 
 .mercado-nome {
@@ -72,6 +73,7 @@ img {
 
 .cor-preco{
     color: red;
+
 }
 
 .cor-comandos{
@@ -80,4 +82,18 @@ img {
 
 .informacoes{
     background: #0f836a; 
+}
+
+select{
+    width: 100%;
+    background: yellow;
+}
+
+.quantidade{
+    width: 100%;
+    text-align: right;
+}
+
+.valor,.cor-preco{
+    font-size: 20px;
 }
