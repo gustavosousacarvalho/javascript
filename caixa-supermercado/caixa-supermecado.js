@@ -38,9 +38,10 @@ var produtos = [
 ];
 
 var produto;
+var valorProduto = 0;
+var valorTotal = 0;
 function vizualizaProduto(el) {
     produto = produtos.find(p => p.id == el.value)
-    console.log(produto);
     var img = document.getElementsByTagName('img')[0];
     img.src = produto.img;
     var h3 = document.getElementsByTagName('h3')[0];
@@ -50,11 +51,10 @@ function vizualizaProduto(el) {
 }
 
 function inserirProduto(event) {
-    console.log(event.keyCode)
     var f2 = 113;
     var f9 = 120;
     var f10 = 121;
-    if (event.keyCode == f2) {
+    if (event.keyCode == f2 && produto) {
         var tr = document.createElement("tr");
         var td = document.createElement("td");
         var td2 = document.createElement("td");
@@ -68,18 +68,37 @@ function inserirProduto(event) {
 
         var quantidade = document.getElementsByClassName("quantidade")[0].value;
         td3.textContent = quantidade;
-        tr.appendChild(td3); 
+        tr.appendChild(td3);
 
         var totalProduto = produto.valor * quantidade;
         td4.textContent = totalProduto.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
-        tr.appendChild(td4); 
-        
+        td4.className = "valor-total-produto"
+        tr.appendChild(td4);
+
+        var tdValores = document.getElementsByClassName("valor-total-produto");
+         valorTotal = 0;
+
+        for (let index = 0; index < tdValores.length; index++) {
+            valorProduto = tdValores[index].textContent.replace("R$", "").replace(".", "").replace(",", ".")
+            valorTotal = valorTotal + parseFloat(valorProduto);
+
+        }
+        document.getElementsByClassName("total")[0].value = valorTotal.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
+
+        document.getElementsByClassName("quantidade")[0].value = 1;
+
 
     }
     if (event.keyCode == f10) {
         window.close();
     }
     if (event.keyCode == f9) {
+        var valorPago = parseFloat( prompt("Digite valor pago"));
+        if(valorPago >= valorTotal){
+            alert("Troco : " + valorPago - valorTotal)
+        }else{
+            alert("valor insulficiente!")
+        }
     }
 }
 
