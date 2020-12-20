@@ -76,7 +76,7 @@ function inserirProduto(event) {
         tr.appendChild(td4);
 
         var tdValores = document.getElementsByClassName("valor-total-produto");
-         valorTotal = 0;
+        valorTotal = 0;
 
         for (let index = 0; index < tdValores.length; index++) {
             valorProduto = tdValores[index].textContent.replace("R$", "").replace(".", "").replace(",", ".")
@@ -93,10 +93,12 @@ function inserirProduto(event) {
         window.close();
     }
     if (event.keyCode == f9) {
-        var valorPago = parseFloat( prompt("Digite valor pago"));
-        if(valorPago >= valorTotal){
-            alert("Troco : " + valorPago - valorTotal)
-        }else{
+        var valorPago = parseFloat(prompt("Digite valor pago"));
+        if (valorPago >= valorTotal) {
+            var troco = valorPago - valorTotal;
+            alert("Troco : " + (troco.toLocaleString("pt-br", { style: "currency", currency: "BRL" })));
+            location.reload();
+        } else {
             alert("valor insulficiente!")
         }
     }
