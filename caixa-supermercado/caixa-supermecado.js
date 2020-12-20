@@ -50,10 +50,26 @@ function vizualizaProduto(el) {
     valor.textContent = produto.valor.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
 }
 
+function calculaTotal(){
+    var tdValores = document.getElementsByClassName("valor-total-produto");
+        valorTotal = 0;
+
+        for (let index = 0; index < tdValores.length; index++) {
+            valorProduto = tdValores[index].textContent.replace("R$", "").replace(".", "").replace(",", ".")
+            valorTotal = valorTotal + parseFloat(valorProduto);
+
+        }
+        document.getElementsByClassName("total")[0].value = valorTotal.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
+
+        document.getElementsByClassName("quantidade")[0].value = 1;
+}
+
 function inserirProduto(event) {
     var f2 = 113;
+    var f8 = 119;
     var f9 = 120;
     var f10 = 121;
+   
     if (event.keyCode == f2 && produto) {
         var tr = document.createElement("tr");
         var td = document.createElement("td");
@@ -62,6 +78,7 @@ function inserirProduto(event) {
         var td4 = document.createElement("td");
         td.textContent = produto.id;
         td2.textContent = produto.nome;
+        tr.id = produto.id;
         tr.appendChild(td);
         tr.appendChild(td2);
         document.getElementsByTagName("tbody")[0].appendChild(tr);
@@ -75,20 +92,20 @@ function inserirProduto(event) {
         td4.className = "valor-total-produto"
         tr.appendChild(td4);
 
-        var tdValores = document.getElementsByClassName("valor-total-produto");
-        valorTotal = 0;
-
-        for (let index = 0; index < tdValores.length; index++) {
-            valorProduto = tdValores[index].textContent.replace("R$", "").replace(".", "").replace(",", ".")
-            valorTotal = valorTotal + parseFloat(valorProduto);
-
-        }
-        document.getElementsByClassName("total")[0].value = valorTotal.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
-
-        document.getElementsByClassName("quantidade")[0].value = 1;
+        calculaTotal();
 
 
     }
+
+    if (event.keyCode == f8) {
+        if(produto){
+            document.getElementById(produto.id).remove();
+            calculaTotal()
+        }
+        
+
+    }
+
     if (event.keyCode == f10) {
         window.close();
     }
