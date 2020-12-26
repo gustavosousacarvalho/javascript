@@ -4,6 +4,8 @@
 
 [Click e veja projeto caixa-eletronico](https://gustavosousacarvalho.github.io/javascript/caixa-eletronico)
 
+[Click e veja projeto caixa-supermercado](https://gustavosousacarvalho.github.io/javascript/caixa-supermercado)
+
 * Tipos de variaveis
     * String
     * Number
