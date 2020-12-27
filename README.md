@@ -14,7 +14,7 @@
     * Object
 * Estruturas condicionas
     * if else
-    * switc case
+    * switch case
 * function (Funções)
     * com parametro
     * sem parametro
@@ -25,3 +25,9 @@
     * divisão (/)  
     * porcentagem (percent * valor)/100
     * modulo (%) 
+* Eventos
+    * onclick
+    * onchange
+    * keyUp
+    * keyPress
+    

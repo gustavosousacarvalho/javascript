@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <script>
+        var cartas = [];
+        console.log(cartas);
+        window.onload = function () {
+            var cardId = location.href.split('?')[1];
+            fetch("https://api.pokemontcg.io/v1/cards?pageSize=100&id="+cardId)
+                .then((response) => response.json())
+                .then((data) => {
+                    cartas = data.cards;
+                    console.log(cartas);
+                    for (let index = 0; index < cartas.length; index++) {
+                        var img = document.createElement("img");
+                        img.src = cartas[index].imageUrl;
+                        document.body.appendChild(img);
+
+                    }
+                })
+
+        } 
+    </script>
+    <style>
+        img {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
