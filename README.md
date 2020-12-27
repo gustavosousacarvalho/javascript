@@ -30,4 +30,13 @@
     * onchange
     * keyUp
     * keyPress
+* Api javascript
+    * document.getElementById
+    * document.getElementByName
+    * document.getElementByTagName
+    * document.getElementByClassName
+    * document.formulario //usar propriedade name do html no form
+* Ajax
+    * GET
+    
     

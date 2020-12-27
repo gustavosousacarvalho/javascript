@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Github</title>
+    <script>
+
+        fetch("https://api.github.com/users/gustavosousacarvalho")
+            .then((response) => response.json())
+            .then((user) => {
+                console.log(user)
+                document.getElementById("avatar").src = user.avatar_url;
+                document.getElementById("nome").textContent = user.login;
+            })
+        fetch("https://api.github.com/users/gustavosousacarvalho/subscriptions")
+            .then((response) => response.json())
+            .then((projects) => {
+                console.log(projects)
+                for (let index = 0; index < projects.length; index++) {
+                    var li = document.createElement("li");
+                    li.textContent = projects[index].name;
+                    document.getElementById("project").appendChild(li);
+
+                }
+            })
+    </script>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .item {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            margin: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <img id="avatar" width="100%">
+        </div>
+        <div class="item">
+            <h2 id="nome"></h2>
+            <div>
+                <h3>Projetos</h3>
+                <ul id="project">
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
