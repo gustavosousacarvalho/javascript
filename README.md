@@ -38,5 +38,6 @@
     * document.formulario //usar propriedade name do html no form
 * Ajax
     * GET
+    * POST
     
     
