@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persoagens</title>
+    <script>
+        window.onload = function () {
+            var personagens = [
+                { nome: "Alok", diamantes: 599 },
+                { nome: "kapella", diamantes: 499 },
+                { nome: "Hayato", diamantes: 499 },
+                { nome: "Kelly", diamantes: 399 },
+                { nome: "Laura", diamantes: 499 },
+                { nome: "Moco", diamantes: 499 },
+                { nome: "Dasha", diamantes: 499 },
+                { nome: "Jai", diamantes: 499 },
+                { nome: "Luqueta", diamantes: 499 },
+                { nome: "Evelyn", diamantes: 499 },
+            ];
+           for (let index = 0; index < personagens.length; index++) {
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            td1.textContent = personagens[index].nome;
+            td2.textContent = personagens[index].diamantes;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            document.getElementsByTagName("table")[0].appendChild(tr);
+               
+           }
+
+        }
+    </script>
+    <style>
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    Loja de Persoagens Free Fire
+    <table style="width:300px">
+        <tr>
+            <th>Nome</th>
+            <th>Diamantes</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>
