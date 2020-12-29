@@ -24,7 +24,7 @@
     </style>
     <script>
         window.onload = function(){
-            fetch("https://jsonplaceholder.typicode.com/posts?_sort=id&_order=desc&_limit=200")
+            fetch("http://192.168.15.26:3000/posts?_sort=id&_order=desc&_limit=200")
             .then((response)=>response.json())
             .then((posts)=>{
               for (let index = 0; index < posts.length; index++) {
@@ -35,7 +35,7 @@
                h2.textContent = posts[index].title;
                div.appendChild(h2);
                var p = document.createElement("p");
-               p.textContent = posts[index].body;
+               p.textContent = posts[index].author;
                div.appendChild(p);
                   
               }
@@ -47,6 +47,7 @@
 </head>
 <body>
     <h1>Postagens</h1>
+    <a href="post.html">Cria Postagem</a>
     <div class="container">
          
     </div>
