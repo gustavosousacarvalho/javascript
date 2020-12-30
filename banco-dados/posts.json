@@ -1,0 +1,42 @@
+
+
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Meu primeiro Post",
+      "author": "Este post é o primeiro fique sabendo que ele sempre sera o primeiro!"
+    },
+    {
+      "title": "trolagem",
+      "author": "ivanildo trolou miguel",
+      "id": 2
+    },
+    {
+      "title": "Clarice Pacheco",
+      "author": "Caderno de poesias\né um belo lugar.\nTantas coisas lindas\nque eu gostaria de falar.\nEu falo em forma de versos\npara todos poderem escutar.\nAgora você já sabe\npor que os poetas passam os dias\nescrevendo",
+      "id": 3
+    },
+    {
+      "title": "Mario Quinatna",
+      "author": "- Eu amo o mundo! Eu detesto o mundo! Eu creio em Deus! Deus é um absurdo! Eu vou me matar! Eu quero viver!\n- Você é louco?\n- Não, sou poeta.",
+      "id": 4
+    },
+   
+    {
+      "title": "Pedro Biel ",
+      "author": "Poesia não dá camisa.\nMas quando o poeta tem uma musa,\nnão precisa de blusa,\nvive de brisa",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

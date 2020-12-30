@@ -24,7 +24,7 @@
     </style>
     <script>
         window.onload = function(){
-            fetch("http://192.168.15.26:3000/posts?_sort=id&_order=desc&_limit=200")
+            fetch("http://localhost:3000/posts?_sort=id&_order=desc&_limit=200")
             .then((response)=>response.json())
             .then((posts)=>{
               for (let index = 0; index < posts.length; index++) {

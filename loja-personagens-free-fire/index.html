@@ -4,89 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Persoagens</title>
     <script>
-        var personagens = [
-            { id: 1, nome: "Alok", dimas: 599, img: "pesonagens/alok.png" },
-            { id: 2, nome: "kapella", dimas: 499, img: "pesonagens/kapella.png" },
-            { id: 3, nome: "Hayato", dimas: 499, img: "pesonagens/hayato.png" },
-            { id: 4, nome: "Kelly", dimas: 399, img: "pesonagens/kelly.png" },
-            { id: 5, nome: "Laura", dimas: 499, img: "pesonagens/laura.jpg" },
-            { id: 6, nome: "Moco", dimas: 499, img: "pesonagens/Moco.jpg" },
-            { id: 7, nome: "Misha", dimas: 499, img: "pesonagens/Misha.jpg" },
-            { id: 8, nome: "Alvaro", dimas: 499, img: "pesonagens/alvaro.jpg" },
-            { id: 9, nome: "Raphael", dimas: 499, img: "pesonagens/raphael.png" },
-            { id: 10, nome: "Paloma", dimas: 399, img: "pesonagens/paloma.png" },
-        ];
-        var personagem;
-        var saldoDimas = 2000;
         window.onload = function () {
-            document.getElementsByTagName("h3")[0].textContent = saldoDimas;
+            var personagens = [];
+            fetch("http://localhost:3004/personagens?_sort=id&_order=asc&_limit=200")
+                .then((response) => response.json())
+                .then((dados) => {
+                    personagens = dados.filter(p => p.comprado == true);
+                    for (let index = 0; index < personagens.length; index++) {
+                        var tr = document.createElement("tr");
+                        var td1 = document.createElement("td");
+                        var td2 = document.createElement("td");
+                        td1.textContent = personagens[index].nome;
+                        td2.textContent = personagens[index].dimas;
+                        tr.appendChild(td1);
+                        tr.appendChild(td2);
+                        document.getElementsByTagName("table")[0].appendChild(tr);
 
+                    }
 
-            for (let index = 0; index < personagens.length; index++) {
-                var option = document.createElement("option");
-                option.textContent = personagens[index].nome;
-                option.value = personagens[index].id;
-                option.id = personagens[index].id;
-                document.getElementsByTagName("select")[0].appendChild(option);
-
-
-            }
-
-        }
-
-        function selecionaPersonagem(select) {
-            personagem = personagens.find(p => p.id == select.value)
-            var img = document.getElementsByTagName('img')[1];
-            img.src = personagem.img;
-            var h2 = document.getElementsByTagName('h2')[0];
-            h2.textContent = "Dimas: " + personagem.dimas;
+                });
 
         }
-        function comprarPersonagem() {
-            if (personagem && personagem.dimas <= saldoDimas) {
-                saldoDimas = saldoDimas - personagem.dimas;
-                document.getElementsByTagName("h3")[0].textContent = saldoDimas;
-                document.getElementsByTagName('select')[0].selectedOptions[0].disabled = true
-                document.getElementsByTagName('img')[1].src = "";
-                document.getElementsByTagName('h2')[0].textContent = "";
-                personagem = undefined;
-                document.getElementsByTagName('select')[0].options[0].selected=true
-            } else if(personagem) {
-                alert("Dima insulficiente!")
-            }
-
-        }
-
     </script>
     <style>
-        button {
-            width: 200px;
-            padding: 5px;
-            background: yellow;
-        }
-
-        h3 {
-            display: inline;
+        td {
+            text-align: center;
         }
     </style>
-
 </head>
 
 <body>
-    <select onchange="selecionaPersonagem(this)">
-        <option selected disabled value="">Selecione o personagem</option>
-    </select>
-    <img src="imgs/dima.png" alt="Dimas" width="25">
-    <h3></h3>
-    <div>
-        <h2></h2>
-        <img src="" width="200">
-    </div>
-    <div>
-        <button onclick="comprarPersonagem()">Comprar</button>
-    </div>
+    <h1>Meus personagens</h1>
+    <a href="loja.html">Comprar Personagens</a>
+    <table style="width:300px">
+        <tr>
+            <th>Nome</th>
+            <th>Diamantes</th>
+        </tr>
+    </table>
+
+
 </body>
 
 </html>

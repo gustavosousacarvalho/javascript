@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var personagens = [];
+        var personagem;
+        var saldoDimas = 2000;
+        window.onload = function () {
+            fetch("http://localhost:3004/personagens?_sort=id&_order=asc&_limit=200")
+                .then((response) => response.json())
+                .then((dados) => {
+                    personagens = dados.filter(p => p.comprado == false);
+                    document.getElementsByTagName("h3")[0].textContent = saldoDimas;
+
+
+                    for (let index = 0; index < personagens.length; index++) {
+                        var option = document.createElement("option");
+                        option.textContent = personagens[index].nome;
+                        option.value = personagens[index].id;
+                        option.id = personagens[index].id;
+                        document.getElementsByTagName("select")[0].appendChild(option);
+
+
+                    }
+                });
+
+
+        }
+
+        function selecionaPersonagem(select) {
+            personagem = personagens.find(p => p.id == select.value)
+            var img = document.getElementsByTagName('img')[1];
+            img.src = personagem.img;
+            var h2 = document.getElementsByTagName('h2')[0];
+            h2.textContent = "Dimas: " + personagem.dimas;
+
+        }
+        function comprarPersonagem() {
+            if (personagem && personagem.dimas <= saldoDimas) {
+                saldoDimas = saldoDimas - personagem.dimas;
+                document.getElementsByTagName("h3")[0].textContent = saldoDimas;
+                document.getElementsByTagName('select')[0].selectedOptions[0].disabled = true
+                document.getElementsByTagName('img')[1].src = "";
+                document.getElementsByTagName('h2')[0].textContent = "";
+                personagem = undefined;
+                document.getElementsByTagName('select')[0].options[0].selected = true
+            } else if (personagem) {
+                alert("Dima insulficiente!")
+            }
+
+        }
+
+    </script>
+    <style>
+        button {
+            width: 200px;
+            padding: 5px;
+            background: yellow;
+        }
+
+        h3 {
+            display: inline;
+        }
+    </style>
+
+</head>
+
+<body>
+    <select onchange="selecionaPersonagem(this)">
+        <option selected disabled value="">Selecione o personagem</option>
+    </select>
+    <img src="imgs/dima.png" alt="Dimas" width="25">
+    <h3></h3>
+    <div>
+        <h2></h2>
+        <img src="" width="200">
+    </div>
+    <div>
+        <button onclick="comprarPersonagem()">Comprar</button>
+    </div>
+</body>
+
+</html>
