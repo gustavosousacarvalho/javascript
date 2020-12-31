@@ -8,8 +8,14 @@
     <script>
         var personagens = [];
         var personagem;
-        var saldoDimas = 2000;
+        var saldoDimas = 0;
         window.onload = function () {
+            fetch("http://localhost:3004/dimas")
+                .then((response) => response.json())
+                .then((dados) => {
+                    saldoDimas = dados.saldo
+
+                });
             fetch("http://localhost:3004/personagens?_sort=id&_order=asc&_limit=200")
                 .then((response) => response.json())
                 .then((dados) => {
@@ -41,13 +47,14 @@
         }
         function comprarPersonagem() {
             if (personagem && personagem.dimas <= saldoDimas) {
-                saldoDimas = saldoDimas - personagem.dimas;
-                document.getElementsByTagName("h3")[0].textContent = saldoDimas;
-                document.getElementsByTagName('select')[0].selectedOptions[0].disabled = true
-                document.getElementsByTagName('img')[1].src = "";
-                document.getElementsByTagName('h2')[0].textContent = "";
-                personagem = undefined;
-                document.getElementsByTagName('select')[0].options[0].selected = true
+                personagem.comprado = true;
+                fetch("http://localhost:3004/dimas/", { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ saldo: saldoDimas - personagem.dimas }) })
+                    .then((response) => {
+                        fetch("http://localhost:3004/personagens/" + personagem.id, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(personagem) })
+                            .then((response) => {
+                                location.href = "index.html";
+                            });
+                    });
             } else if (personagem) {
                 alert("Dima insulficiente!")
             }

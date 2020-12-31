@@ -19,14 +19,14 @@
       "nome": "Hayato",
       "dimas": 499,
       "img": "pesonagens/hayato.png",
-      "comprado": false
+      "comprado": true
     },
     {
       "id": 4,
       "nome": "Kelly",
       "dimas": 399,
       "img": "pesonagens/kelly.png",
-      "comprado": false
+      "comprado": true
     },
     {
       "id": 5,
@@ -68,7 +68,10 @@
       "nome": "Paloma",
       "dimas": 399,
       "img": "pesonagens/paloma.png",
-      "comprado": false
+      "comprado": true
     }
-  ]
+  ],
+  "dimas": {
+    "saldo": 104
+  }
 }
