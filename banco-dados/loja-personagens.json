@@ -5,7 +5,7 @@
       "nome": "Alok",
       "dimas": 599,
       "img": "pesonagens/alok.png",
-      "comprado": true
+      "comprado": false
     },
     {
       "id": 2,
@@ -19,14 +19,14 @@
       "nome": "Hayato",
       "dimas": 499,
       "img": "pesonagens/hayato.png",
-      "comprado": true
+      "comprado": false
     },
     {
       "id": 4,
       "nome": "Kelly",
       "dimas": 399,
       "img": "pesonagens/kelly.png",
-      "comprado": true
+      "comprado": false
     },
     {
       "id": 5,
@@ -68,10 +68,17 @@
       "nome": "Paloma",
       "dimas": 399,
       "img": "pesonagens/paloma.png",
-      "comprado": true
+      "comprado": false
+    },
+    {
+      "nome": "Caroline",
+      "dimas": "499",
+      "img": "https://freefiremobile-a.akamaihd.net/ffwebsite/images/character/caroline/char.png",
+      "comprado": true,
+      "id": 11
     }
   ],
   "dimas": {
-    "saldo": 104
+    "saldo": 1501
   }
 }

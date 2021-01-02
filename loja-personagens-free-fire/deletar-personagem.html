@@ -8,20 +8,11 @@
     <script>
         var personagens = [];
         var personagem;
-        var saldoDimas = 0;
         window.onload = function () {
-            fetch("http://localhost:3004/dimas")
-                .then((response) => response.json())
-                .then((dados) => {
-                    saldoDimas = dados.saldo
-
-                });
             fetch("http://localhost:3004/personagens?_sort=id&_order=asc&_limit=200")
                 .then((response) => response.json())
                 .then((dados) => {
                     personagens = dados.filter(p => p.comprado == false);
-                    document.getElementsByTagName("h3")[0].textContent = saldoDimas;
-
 
                     for (let index = 0; index < personagens.length; index++) {
                         var option = document.createElement("option");
@@ -29,7 +20,6 @@
                         option.value = personagens[index].id;
                         option.id = personagens[index].id;
                         document.getElementsByTagName("select")[0].appendChild(option);
-
 
                     }
                 });
@@ -39,21 +29,16 @@
 
         function selecionaPersonagem(select) {
             personagem = personagens.find(p => p.id == select.value)
-            var img = document.getElementsByTagName('img')[1];
+            var img = document.getElementsByTagName('img')[0];
             img.src = personagem.img;
             var h2 = document.getElementsByTagName('h2')[0];
-            h2.textContent = "Dimas: " + personagem.dimas;
 
         }
         function comprarPersonagem() {
-            if (personagem && personagem.dimas <= saldoDimas) {
-                personagem.comprado = true;
-                fetch("http://localhost:3004/dimas/", { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ saldo: saldoDimas - personagem.dimas }) })
+            if (personagem) {
+                fetch("http://localhost:3004/personagens/" + personagem.id, { method: 'DELETE', headers: { 'Content-Type': 'application/json' }})
                     .then((response) => {
-                        fetch("http://localhost:3004/personagens/" + personagem.id, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(personagem) })
-                            .then((response) => {
-                                location.href = "index.html";
-                            });
+                        location.href = "index.html";
                     });
             } else if (personagem) {
                 alert("Dima insulficiente!")
@@ -68,27 +53,21 @@
             padding: 5px;
             background: yellow;
         }
-
-        h3 {
-            display: inline;
-        }
     </style>
 
 </head>
 
 <body>
-    <h1>Loja de personagens</h1>
+    <h1>Deletar personagens</h1>
     <select onchange="selecionaPersonagem(this)">
         <option selected disabled value="">Selecione o personagem</option>
     </select>
-    <img src="imgs/dima.png" alt="Dimas" width="25">
-    <h3></h3>
     <div>
         <h2></h2>
         <img src="" width="200">
     </div>
     <div>
-        <button onclick="comprarPersonagem()">Comprar</button>
+        <button onclick="comprarPersonagem()">Delatar</button>
     </div>
 </body>
 

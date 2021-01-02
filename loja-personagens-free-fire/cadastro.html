@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar personagem</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item {
+            display: flex;
+            flex: 1;
+            margin: 5px;
+        }
+
+        .btn-salvar {
+            width: 80px;
+            padding: 5px;
+            justify-content: center;
+            align-self: flex-end;
+
+        }
+    </style>
+    <script>
+        function criaPersonagem(event) {
+            event.preventDefault();
+            var personagem = {
+                "nome": document.form.nome.value,
+                "dimas": document.form.dimas.value,
+                "img": document.form.img.value,
+                "comprado": false
+            };
+            fetch("http://localhost:3004/personagens", { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(personagem) })
+                .then((response) => {
+                     location.href = "loja.html"
+                });
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Criar personagem</h1>
+    <form class="container" name="form" onsubmit="criaPersonagem(event)">
+        <Label class="item">Nome</Label>
+        <input type="text" required name="nome" class="item">
+        <label class="item">Dimas</label>
+        <input type="number" required name="dimas" class="item">
+        <label class="item">Url da imagem</label>
+        <input type="url" required name="img" class="item">
+        <input type="submit" class="item btn-salvar" value="Salvar">
+    </form>
+</body>
+
+</html>
