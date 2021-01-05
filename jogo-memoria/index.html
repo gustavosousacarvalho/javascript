@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memoria</title>
+    <script>
+        var carta1;
+        var carta2;
+        var cartaFf = "cartas/carta-ff.webp";
+        var cartas = [
+            "cartas/alok.png",
+            "cartas/alvaro.jpg",
+            "cartas/antonio.png",
+            "cartas/hayato.png",
+            "cartas/kapellA.png",
+            "cartas/kelly.png",
+            "cartas/laura.png",
+            "cartas/maxim.png",
+            "cartas/miguel.png",
+            "cartas/Misha.jpg",
+            "cartas/Moco.jpg",
+            "cartas/paloma.png",
+            "cartas/raphael.png",
+            "cartas/alok.png",
+            "cartas/alvaro.jpg",
+            "cartas/antonio.png",
+            "cartas/hayato.png",
+            "cartas/kapellA.png",
+            "cartas/kelly.png",
+            "cartas/laura.png",
+            "cartas/maxim.png",
+            "cartas/miguel.png",
+            "cartas/Misha.jpg",
+            "cartas/Moco.jpg",
+            "cartas/paloma.png",
+            "cartas/raphael.png",
+        ].sort(() => Math.random() - 0.5);
+
+        window.onload = function () {
+            for (let index = 0; index < cartas.length; index++) {
+                var img = document.createElement("img")
+                img.src = cartaFf //cartas[index];
+                img.height = 170;
+                img.id = index;
+                img.addEventListener("click", function (event) {
+                    event.target.src = cartas[event.target.id];
+                    if (carta1 == undefined) {
+                        carta1 = event.target;
+                    } else if (carta2 == undefined) {
+                        carta2 = event.target;
+                    }
+
+                    setTimeout(() => {
+                        if (carta1 != undefined && carta2 != undefined) {
+                            if (carta1.src == carta2.src) {
+                                carta1.remove();
+                                carta2.remove();
+                                carta1 = undefined;
+                                carta2 = undefined;
+                                console.log("Achou");
+                            } else {
+                                carta1.src = cartaFf;
+                                carta2.src = cartaFf;
+                                carta1 = undefined;
+                                carta2 = undefined;
+                                console.log("Não achou");
+                            }
+                        }
+                    }, 1000);
+
+                });
+                document.getElementsByClassName("container")[0].appendChild(img);
+
+            }
+        }
+
+
+    </script>
+    <style>
+        img {
+            margin: 5px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jogo da Memoria Free Fire</h1>
+    <div class="container">
+
+    </div>
+</body>
+
+</html>

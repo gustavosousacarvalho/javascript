@@ -1,0 +1,2 @@
+npx json-server --p 3002 Api/posts.json
+npx json-server --p 3004 Api/loja-personagens.json

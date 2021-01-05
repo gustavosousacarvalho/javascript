@@ -1,2 +1,0 @@
-npx json-server --p 3002 banco-dados/posts.json
-npx json-server --p 3004 banco-dados/loja-personagens.json

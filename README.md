@@ -39,6 +39,10 @@
 * Ajax
     * GET
     * PUT
-    * POST //proxima aula
+    * POST
+    * DELETE
+* Operadores de comparação //proxima aula
+
+    
     
     

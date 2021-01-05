@@ -74,7 +74,7 @@
       "nome": "Caroline",
       "dimas": "499",
       "img": "https://freefiremobile-a.akamaihd.net/ffwebsite/images/character/caroline/char.png",
-      "comprado": true,
+      "comprado": false,
       "id": 11
     }
   ],
