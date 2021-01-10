@@ -59,6 +59,9 @@
                                 carta2.remove();
                                 carta1 = undefined;
                                 carta2 = undefined;
+                                if ( document.getElementsByClassName("container")[0].children.length==0) {
+                                    alert("Você venceu!")
+                                }
                                 console.log("Achou");
                             } else {
                                 carta1.src = cartaFf;
