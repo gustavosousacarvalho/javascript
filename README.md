@@ -41,8 +41,11 @@
     * PUT
     * POST
     * DELETE
-* Operadores de comparação //proxima aula
-
-    
-    
-    
+* Operadores
+    * atribuição(=)
+    * igualdade(== ou ===)
+    * desigualdade(!= ou !==)
+    * maior(>)
+    * maior igual(>=)
+    * menor(<)
+    * menor igual(<=)
