@@ -15,6 +15,10 @@
 * Estruturas condicionas
     * if else
     * switch case
+* Estruturas de repetições
+    * for
+    * forEach
+    * while
 * function (Funções)
     * com parametro
     * sem parametro
@@ -42,9 +46,10 @@
     * POST
     * DELETE
 * Operadores
-    * atribuição(=)
+    * atribuição(=, ++, --)
     * igualdade(== ou ===)
     * desigualdade(!= ou !==)
+    * multiplas condições(&&)
     * maior(>)
     * maior igual(>=)
     * menor(<)
