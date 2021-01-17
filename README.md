@@ -53,4 +53,5 @@
     * maior(>)
     * maior igual(>=)
     * menor(<)
-    * menor igual(<=)
+    * menor igual(<=) 
+* ------ //doctop
