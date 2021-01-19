@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior de idade</title>
+    <script>
+        var nome;
+        var idade;
+        window.onload = function () {
+            nome = document.getElementById("1");
+            idade = document.getElementById("3");
+        };
+        function maiorIdade(event) {
+            event.preventDefault();
+            if (idade < 18) {
+                alert("Olá," + nome + 'acesso negado, pois você é menor de idade.')
+
+            } else if (idade >= 18) {
+                    alert("Olá," + nome + ", acesso permitido.")
+                }
+        };
+
+
+
+
+    </script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            align-items: center;
+            margin: 20px auto;
+        }
+
+        input {
+            display: flex;
+            margin: 3px;
+        }
+
+        .botao {
+            flex: 1;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label>Digite seu primeiro nome:</label>
+        <input type=" text" id="1" required>
+        <label>Digite sua idade:</label>
+        <input type="number" id="3" name="idade" required>
+        <input type="button" value="Acessar site" class="botao" onclick="maiorIdade(event)">
+    </div>
+</body>
+
+</html>
