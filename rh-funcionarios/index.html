@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RH Funcionarios</title>
+    <script>
+         function cadastraFuncionario(event) {
+            event.preventDefault();
+           var tr = document.createElement("tr")
+           var tdNome = document.createElement("td")
+           var tdCargo = document.createElement("td")
+           var tdSalario = document.createElement("td")   
+
+           tdNome.textContent = document.form.nome.value;
+           tdCargo.textContent = document.form.cargo.value;
+           tdSalario.textContent = Number(document.form.salario.value).toLocaleString("pt-br", { style: "currency", currency: "BRL" });
+
+           tr.appendChild(tdNome);
+           tr.appendChild(tdCargo);
+           tr.appendChild(tdSalario);
+
+           document.getElementsByTagName("tbody")[0].appendChild(tr);
+
+           document.form.reset();
+
+
+        }
+    </script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 500px;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin-bottom: 60px;
+        }
+        label,input{
+            padding: 5px;
+        }
+        .botao {
+            flex: 1;
+            justify-content: center;
+            width: 100px;
+            align-self: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>RH: TI soluções</h1>
+    <form name="form" onsubmit="cadastraFuncionario(event)">
+        <label>Nome</label>
+        <input type="text" name="nome" required>
+        <label>Cargo</label>
+        <input type="text" name="cargo" required>
+        <label>Salario</label>
+        <input type="number" name="salario" required>
+        <input type="submit" value="Inserir" class="botao">
+    </form>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cargo</th>
+                <th>Salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ivanildo</td>
+                <td>Programador Senior</td>
+                <td>R$ 5.500,00</td>
+            </tr>
+            <tr>
+                <td>Gustavo</td>
+                <td>Gerente de projeto</td>
+                <td>R$ 15.000,00</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
