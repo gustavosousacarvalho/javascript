@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paisagens</title>
+    <script>
+        var paisagens = [
+            "paisagem/atol-das-rocas.jpg",
+            "paisagem/canio-fortaleza.jpg",
+            "paisagem/cataratas-do-iguacu.jpg",
+            "paisagem/chapada-diamantina.jpg",
+            "paisagem/dedo-de-deus.jpg",
+            "paisagem/dunas-do-iguacu.jpg",
+            "paisagem/maragogi.jpg",
+            "paisagem/monte-roraima.jpg",
+            "paisagem/pantanal.jpg",
+            "paisagem/porto-de-galinhas.jpg",
+        ];
+        window.onload = function () {
+           for (let index = 0; index < paisagens.length; index++) {
+            var img = document.createElement("img")
+            img.height = 300;
+            img.src = paisagens[index]
+            document.body.appendChild(img);
+               
+           }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Paisagens do Brasil</h1>
+</html>
