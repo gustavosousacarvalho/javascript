@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web carros</title>
+    <script>
+        var carros = [
+            {
+                nome: "Onix",
+                modelo: "ltz 1.4",
+                cor: "vermelho ferrari",
+                ano: "2016",
+                quilometragem:"50.000",
+                preço: "37.500",
+                imagem: "https://2.bp.blogspot.com/-NnTLHl3UnRI/UZ6pWAn1QhI/AAAAAAABBOI/V9UAsgJ9Y8c/s1600/Onix-LTZ-2014+(1).JPG"
+            },
+            {
+                nome: "bmw m3",
+                modelo: "3.0",
+                cor: "azul",
+                ano: "2018",
+                quilometragem: "8.900",
+                preço: "430.000",
+                imagem: "https://besthqwallpapers.com/Uploads/29-5-2018/54161/thumb2-bmw-m3-cs-2018-f80-exterior-blue-sedan.jpg"
+            }
+        ];
+        window.onload = function(){
+            for (let index = 0; index < carros.length; index++) {
+            var img = document.createElement("img");
+            img.title = carros[index].nome + " " + carros[index].ano + " quilometragem: " + carros[index].quilometragem + " preço: " + carros[index].preço;
+            img.src = carros[index].imagem;
+            document.body.appendChild(img);
+
+        }
+        }
+    </script>
+    <style>
+        img{
+            width: 400px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Web carros</h1>
+</body>
+
+</html>
