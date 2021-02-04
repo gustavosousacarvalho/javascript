@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de </title>
+    <script>
+        function soma() {
+            document.formulario.resultado.value =
+                String(document.formulario.numero1.value) +
+                String(document.formulario.numero2.value);
+
+        }
+    </script>
+    <style>
+       .container {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            align-items: center;
+            margin: 20px auto;
+            background: darkgrey;
+        }
+
+        input {
+            display: flex;
+            margin: 3px;
+        }
+
+        .botao {
+            flex: 1;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="formulario" class="container">
+        Numero 1 <input type="number" name="numero1" size="5"><br>
+        <input type="button" value="+" class="botao"><br>
+        Numero 2: <input type="number" name="numero2" size="5" onchange="soma()"><br>
+        Resultado <input type="text" name="resultado" size="5" readonly>
+    </form>
+
+
+</body>
+
+</html>
