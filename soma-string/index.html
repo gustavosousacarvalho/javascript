@@ -6,41 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soma de </title>
     <script>
-        function soma() {
-            document.formulario.resultado.value =
-                String(document.formulario.numero1.value) +
-                String(document.formulario.numero2.value);
+        function soma(event) {
+            event.preventDefault();
+            document.getElementById("total").textContent =
+                Number(document.formulario.numero1.value) +
+                Number(document.formulario.numero2.value);
 
         }
     </script>
     <style>
-       .container {
+        .container {
             display: flex;
-            flex-direction: column;
-            width: 200px;
-            align-items: center;
-            margin: 20px auto;
-            background: darkgrey;
+            flex-wrap: wrap;
+            margin-left: 50px;
+            margin-top: 50px;
+
         }
 
-        input {
+        .item {
+            flex: 1;
+
+        }
+
+        .resultado {
+            width: 100%;
+        }
+
+        .btn-calcular {
             display: flex;
-            margin: 3px;
+            justify-content: center left;
+            padding: 20px;
+        }
+
+        .campos {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .input1 {
+            width: 50px;
+        }
+
+        .input2 {
+            width: 50px;
         }
 
         .botao {
-            flex: 1;
-            justify-content: center;
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 1px solid darkgrey;
+            position: relative;
+        }
+
+        label {
+            margin-right: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        body {
+            background: rgb(214, 211, 211);
         }
     </style>
 </head>
 
 <body>
-    <form name="formulario" class="container">
-        Numero 1 <input type="number" name="numero1" size="5"><br>
-        <input type="button" value="+" class="botao"><br>
-        Numero 2: <input type="number" name="numero2" size="5" onchange="soma()"><br>
-        Resultado <input type="text" name="resultado" size="5" readonly>
+    <form name="formulario" class="container" onsubmit="soma(event)">
+        <div class="item item-campos">
+            <div class="campos">
+                <label>Numero 1:</label>
+                <input type="number" name="numero1" size="5" class="input1">
+            </div>
+            <div class="campos">
+                <label>Numero 2:</label>
+                <input type="number" name="numero2" size="5" class="input2">
+            </div>
+        </div>
+        <div class="item btn-calcular">
+            <input type="submit" value="CALCULAR" class="botao">
+        </div>
+        <div class="item, resultado">
+            <h2>O Resultado da Soma é: <span id="total">0</span> </h2>
+        </div>
     </form>
 
 
