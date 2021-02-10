@@ -6,56 +6,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de login</title>
+    <script>
+        var email = "gc49862@gmail.com"
+        var senha = "diablo"
+        function logar(event) {
+            event.preventDefault();
+            if (document.formLogin.email.value === email && document.formLogin.senha.value === senha) {
+                alert("Logado com sucesso!!")
+                location.href = "logado.html"
+
+            } else {
+                alert("Email ou Senha incorreto")
+            }
+        }
+    </script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            align-items: center;
+            margin: 20px auto;
+            margin-top: 60px;
+            background: white;
+        }
+
+        input {
+            display: flex;
+            margin: 3px;
+        }
+
+        .botao {
+            justify-content: center;
+            width: 200px;
+            padding: 5px;
+            background: rgb(123, 202, 232);
+            background: linear-gradient(90deg, rgba(123, 202, 232, 1) 37%, rgba(190, 100, 241, 1) 51%, rgba(149, 32, 215, 1) 85%);
+            margin-left: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            background: rgb(123, 202, 232);
+            background: linear-gradient(90deg, rgba(123, 202, 232, 1) 37%, rgba(190, 100, 241, 1) 51%, rgba(149, 32, 215, 1) 85%);
+        }
+
+        label {
+            margin: 5px;
+        }
+    </style>
 </head>
-<style>
-    .container {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        align-items: center;
-        margin: 20px auto;
-        margin-top: 60px;
-        background: white;
-    }
-
-    input {
-        display: flex;
-        margin: 3px;
-    }
-
-    .botao {
-        justify-content: center;
-        width: 200px;
-        padding: 5px;
-        background: rgb(123, 202, 232);
-        background: linear-gradient(90deg, rgba(123, 202, 232, 1) 37%, rgba(190, 100, 241, 1) 51%, rgba(149, 32, 215, 1) 85%);
-        margin-left: 20px;
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    body {
-        background: rgb(123, 202, 232);
-        background: linear-gradient(90deg, rgba(123, 202, 232, 1) 37%, rgba(190, 100, 241, 1) 51%, rgba(149, 32, 215, 1) 85%);
-    }
-
-    label{
-        margin: 5px;
-    }
-</style>
 
 <body>
-    <form class="container">
+    <form class="container" name="formLogin" onsubmit="logar(event)">
         <h1>Login Form</h1>
         <div>
             <label>Email or Phone</label>
-        <input type="email" name="email" required>
+            <input type="email" name="email" required>
         </div>
         <div>
             <label>Password</label>
-        <input type="password" name="senha" required minlength="4">
+            <input type="password" name="senha" required minlength="4">
         </div>
         <h6 style="color: turquoise">Forgot Password?</h6>
         <input type="submit" value="LOGIN" class="botao" style="color: white">
