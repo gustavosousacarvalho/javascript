@@ -8,61 +8,76 @@
     <title>Document</title>
     <style>
         .container {
-           display: flex;
-           flex-direction: column;
-            margin: 20px;
-            align-items: center;
-            width: 800px;
-            margin: 20px;
-            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        .item{
-            flex: 1;
-            width: 100%;
-            flex-direction: column; 
-        }
-
-        input{
-            width: 200px;
+        .container-fild{
+            display: flex;
+            flex-direction: column;
             margin: 10px;
         }
 
-        .input1{
-            width: 80%;
+        .item {
+            flex: 1;
+            min-width: 300px;
+
         }
 
-        .botao {
+        .item-2 {
+            min-width: 100%;
             flex: 2;
-           width: 150px;
+        }
+
+        label{
+            margin-top: 20px;
+        }
+
+        .btn-salvar{
+            width: 150px;
+            margin: 0 auto;
+            padding: 5px;
+            border-radius: 10px;
         }
     </style>
 </head>
 
 <body>
-      <form>
+    <form>
         <div class="container">
             <div class="item">
-                <label>Seu nome(obrigatório)</label>
-                <input type="text" name="" id="" required>
-                <label>Seu email(obrigatório)</label>
-                <input type="email" name="" id="" required>
+                <div class="container-fild">
+                    <label>Seu nome(obrigatório)</label>
+                    <input type="text" name="" id="" required>
+                </div>
+                <div class="container-fild">
+                    <label>Seu CPF(obrigatório)</label>
+                    <input type="text" name="" id="" required>
+                </div>
             </div>
             <div class="item">
-                <label>Seu nome(obrigatório)</label>
-                <input type="text" name="" id="" required>
-                <label>Seu email(obrigatório)</label>
-                <input type="email" name="" id="" required>
+                <div class="container-fild">
+                    <label>Sua idade(obrigatório)</label>
+                    <input type="text" name="" id="" required>
+                </div>
+                <div class="container-fild">
+                    <label>Seu telefone(obrigatório)</label>
+                    <input type="tel" name="" id="" required>
+                </div>
             </div>
-            <div class="item">
-                <label>Assunto</label>
+            <div class="item item-2">
+                <div class="container-fild">
+                    <label>Assunto</label>
                 <input type="text" name="" id="" class="input1" required>
+                </div>
             </div>
-            <div>
-                <input type="submit" value="Salvar" class="botao">
+            <div class="item item-2">
+                <div class="container-fild">
+                    <input type="submit" value="Salvar" class="btn-salvar">
+                </div>
             </div>
-           </div>
-      </form>
+        </div>
+    </form>
 </body>
 
 </html>
