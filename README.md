@@ -11,6 +11,7 @@
     * Number
     * Booleng
     * Array (Lista)
+        * .push
     * Object
 * Estruturas condicionas
     * if else

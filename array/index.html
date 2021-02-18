@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <script>
+        var imagens = []
+        var containerImagens = document.getElementById("imagens"); 
+        function exibirImagem(event) {
+            event.preventDefault();
+            imagens.push(document.form.img.value);
+            containerImagens.children = [];
+            for (let index = 0; index < imagens.length; index++) {
+                var img = document.createElement("img");
+                img.src = imagens[index]
+                document.form.appendChild(img);
+
+            }
+        }
+    </script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            ;
+            margin: 15px;
+        }
+
+        .item {
+            display: flex;
+            flex: 1;
+            margin: 0;
+        }
+
+        .btn-img {
+            width: 100px;
+            padding: 3px;
+            justify-content: center;
+            align-self: flex-end;
+            margin-left: 10px;
+        }
+
+        label {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form" onsubmit="exibirImagem(event)" class="container">
+        <label>Digite a url: </label>
+        <input type="url" name="img" class="item">
+        <input type="submit" value="Mostra imagem" class="btn-img">
+    </form>
+    <div id="imagens">
+        
+    </div>
+</body>
+
+</html>
