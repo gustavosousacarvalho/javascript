@@ -8,10 +8,14 @@
 
 * Tipos de variaveis
     * String
+        * length
     * Number
     * Booleng
     * Array (Lista)
         * .push
+        * .length
+        * .toString
+        * .pop
     * Object
 * Estruturas condicionas
     * if else
