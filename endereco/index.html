@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endereço</title>
+    <style>
+         .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+        }
+
+        .container-fild{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+
+        .item {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        select{
+            margin-top: 20px;
+        }
+
+        .btn-salvar{
+            width: 150px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="container">
+            <div class="item">
+                <div class="container-fild">
+                    <label>Nome da rua:</label>
+                    <input type="text" name="rua" id="" required>
+                </div>
+                <div class="container-fild">
+                    <label>Número:</label>
+                    <input type="number" name="" id="" required>
+                </div>
+                <div class="container-fild">
+                    <label>Bairro:</label>
+                    <input type="text" name="" id="" required>
+                </div>
+                <div class="container-fild">
+                    <select name="" id="" required>
+                        <option selected disabled>Selecione o Estado</option>
+                        <option> Acre (AC)</option>
+                        <option> Alagoas (AL)</option>
+                        <option> Amapá (AP)</option>
+                        <option>Amazonas (AM)</option>
+                        <option> Bahia (BA)</option>
+                        <option> Ceará (CE)</option>
+                        <option> Distrito Federal (DF)</option>
+                        <option> Espírito Santo (ES)</option>
+                        <option> Goiás (GO)</option>
+                        <option> Maranhão (MA)</option>
+                        <option> Mato Grosso (MT)</option>
+                        <option> Mato Grosso do Sul (MS)</option>
+                        <option> Minas Gerais (MG)</option>
+                        <option> Pará (PA)</option>
+                        <option> Paraíba (PB)</option>
+                        <option> Paraná (PR)</option>
+                        <option> Pernambuco (PE)</option>
+                        <option> Piauí (PI)</option>
+                        <option> Rio de Janeiro (RJ)</option>
+                        <option> Rio Grande do Norte (RN)</option>
+                        <option> Rio Grande do Sul (RS)</option>
+                        <option> Rondônia (RO)</option>
+                        <option> Roraima (RR)</option>
+                        <option> Santa Catarina (SC)</option>
+                        <option> São Paulo (SP)</option>
+                        <option> Sergipe (SE)</option>
+                        <option> Tocantins (TO)</option>
+                    </select>  
+                    <select name="" id="" required>
+                        <option selected disabled>Brasil</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <input type="submit" value="Salvar" class="btn-salvar">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
