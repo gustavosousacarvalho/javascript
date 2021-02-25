@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find (procurar)</title>
+    <script>
+        var animais = [
+            {
+                nome: "Gato",
+                tempoVida: "2-16 anos",
+                id: 1
+            },
+            {
+                nome: "Cachorro",
+                tempoVida: "10-13 anos",
+                id: 2
+            },
+            {
+                nome: "Papagaio",
+                tempoVida: "40-60 anos",
+                id: 3
+            },
+            {
+                nome: "Tartaruga",
+                tempoVida: "150 anos",
+                id: 4
+            },
+        ];
+
+        var nomes = ["antonio", "alok", "misha", "kapela", "paloma"];
+        // var nomes = "kapela paloma";
+        window.onload = function () {
+            var animal = animais.find(animal => animal.nome == "Papagaio");
+             document.body.innerHTML = animal.nome + " " + animal.tempoVida;
+            // document.body.innerHTML = nomes.indexOf("paloma")
+            
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
