@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Anual do Aluno</title>
+    <script>
+        function calcularMedia(event) {
+            event.preventDefault();
+            var nota1 = Number(document.form.nota1.value);
+            var nota2 = Number(document.form.nota2.value);
+            var nota3 = Number(document.form.nota3.value);
+            var nota4 = Number(document.form.nota4.value);
+
+            var media = (nota1 + nota2 + nota3 + nota4) / 4;
+            document.getElementById("resultado").textContent = "Resultado :" +  media + (media>= 6 ? " Aprovado" : " Reprovado");
+        }
+    </script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 150px;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Notas</h1>
+    <form name="form" class="container" onsubmit="calcularMedia(event)">
+        <label>Primeiro bimestre</label>
+        <input type="number" name="nota1" required min="0" max="10">
+        <label>Segundo bimestre</label>
+        <input type="number" name="nota2" required min="0" max="10">
+        <label>Terceiro bimestre</label>
+        <input type="number" name="nota3" required min="0" max="10">
+        <label>Quarto bimestre</label>
+        <input type="number" name="nota4" required min="0" max="10">
+        <input type="submit" value="Calcular Média" class="btn">
+    </form>
+    <h1 id="resultado">Resultado</h1>
+</body>
+
+</html>
