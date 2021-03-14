@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indice de Massa Corporal</title>
+    <script>
+        function calculaImc(event) {
+            event.preventDefault();
+            var peso = Number(document.form.peso.value);
+            var altura = Number(document.form.altura.value);
+
+            var imc = peso / (altura * altura);
+            imc = imc.toFixed(2);
+            if (imc < 18.5) {
+                document.getElementById("resultado").textContent = "Resultado :" + imc + " Peso baixo";
+
+            } else if (imc >= 18.5 && imc <= 24.9) {
+                document.getElementById("resultado").textContent = "Resultado :" + imc + " Peso normal";
+
+            } else if (imc >= 25.0 && imc <= 29.9) {
+                document.getElementById("resultado").textContent = "Resultado :" + imc + " Sobrepeso";
+            
+            }else if (imc>=30.0 && imc<=34.9) {
+            document.getElementById("resultado").textContent = "Resultado :" +  imc + " Obesidade (Grau 1)";
+       
+        }else if (imc>=35.0 && imc<=39.9) {
+            document.getElementById("resultado").textContent = "Resultado :" +  imc + " Obesidade Severa (Grau 2)";
+       
+        }else if (imc>=40) {
+            document.getElementById("resultado").textContent = "Resultado :" +  imc + " Obesidade Mórbita (Grau 3)";
+        }
+    }
+            </script>
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 150px;
+
+        }
+
+        input {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Indice de Massa Corporal</h1>
+    <form name="form" class="container" onsubmit="calculaImc(event)">
+        <label>Digite seu peso: </label>
+        <input type="number" name="peso" required>
+        <label>Digite sua altura: </label>
+        <input type="text" name="altura" required>
+        <input type="submit" value="Calcular IMC">
+    </form>
+    <h1 id="resultado">Resultado</h1>
+</body>
+
+</html>
