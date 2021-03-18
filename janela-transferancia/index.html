@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janela de transferencia</title>
+    <script>
+        var jogadores = []
+
+        function addJogador(event) {
+            event.preventDefault();
+            var jogador = document.form.jogador.value;
+            var preco = Number(document.form.preco.value).toLocaleString("pt-br", { style: "currency", currency: "BRL" });
+
+            jogadores.push({ nome: jogador, valor: preco })
+
+            exibirJogadores()
+        }
+
+        function exibirJogadores() {
+
+            var liJogadores = ""
+
+            jogadores.forEach(jogador => {
+                liJogadores += "<li> jogador: " + jogador.nome + " valor: " + jogador.valor + "</li>";
+            });
+            document.getElementById("jogadores").innerHTML = liJogadores;
+        }
+
+        function excluirJogador() {
+            var jogador = document.form.jogador.value;
+            var deletar = confirm("Tem certeza que deseja excluir este jogador: " + jogador);
+           if (deletar == true) {
+            if (jogador.length > 0) {
+                jogadores = jogadores.filter(j => j.nome != jogador);
+            } else {
+                alert("Preencha o nome do jogador!")
+            }
+            exibirJogadores();
+           }
+        }
+    </script>
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+
+
+        }
+
+        .btn-add {
+            margin-top: 17px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Janela de transferencia</h1>
+    <form name="form" class="container" onsubmit="addJogador(event)">
+        <div>
+            <label>Nome do jogador:</label>
+            <input type="text" name="jogador" required>
+        </div>
+        <div>
+            <label>Preço:</label>
+            <input type="text" name="preco" required>
+        </div>
+        <div>
+            <input type="submit" value="Adicionar" class="btn-add">
+        </div>
+        <div>
+            <input type="button" value="excluir jogador" class="btn-add" onclick="excluirJogador()">
+        </div>
+    </form>
+
+    <ol id="jogadores">
+
+    </ol>
+</body>
+
+</html>
