@@ -45,10 +45,10 @@
     <style>
         .container {
             display: flex;
-            flex-direction: row; 
+            flex-direction: row;
         }
 
-        div {
+        .div {
             display: flex;
             flex-direction: column;
             margin-right: 10px;
@@ -61,36 +61,33 @@
 
         }
 
-        .img{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            margin: 50px;
-            
+        img {
+            width: 250px;
+            margin: 25px;
         }
     </style>
 </head>
 
 <body>
     <form name="form" class="container" onsubmit="addPersonagens(event)">
-        <div>
+        <div class="div">
             <label>Nome do personagem:</label>
             <input type="text" name="personagem" required>
         </div>
-        <div>
+        <div class="div">
             <label>Imagem:</label>
             <input type="url" name="url" required>
         </div>
-        <div>
+        <div class="div">
             <input type="submit" value="Adicionar" class="btn-add">
         </div>
-        <div>
+        <div class="div">
             <input type="button" value="excluir personagem" class="btn-add" onclick="excluirPersonagem()">
-
+        </div>
     </form>
 
     <div id="personagens" class="img">
-        
+
     </div>
 </body>
 
