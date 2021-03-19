@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar personagens</title>
+    <script>
+        var personagens = []
+        function addPersonagens(event) {
+            event.preventDefault();
+            var personagem = document.form.personagem.value;
+            var url = document.form.url.value;
+
+            personagens.push({ nome: personagem, url: url })
+
+            exibirPersonagens()
+        }
+
+        function exibirPersonagens() {
+
+            var lipersonagens = ""
+
+            personagens.forEach(personagem => {
+                lipersonagens += '<img src="' + personagem.url + '" title="' + personagem.nome + '">';
+            });
+            document.getElementById("personagens").innerHTML = lipersonagens;
+        }
+
+        function excluirPersonagem() {
+            var personagem = document.form.personagem.value;
+            var deletar = confirm("Tem certeza que deseja excluir este personagem: " + personagem);
+            if (deletar == true) {
+                if (personagem.length > 0) {
+                    personagens = personagens.filter(p => p.nome != personagem);
+                } else {
+                    alert("Preencha o nome do personagem!")
+                }
+                exibirPersonagens();
+            }
+        }
+    </script>
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 350px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+
+
+        }
+
+        .btn-add {
+            margin-top: 17px;
+
+        }
+
+        .img{
+            display: flex;
+            flex-direction: row;
+            width: 400px;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form" class="container" onsubmit="addPersonagens(event)">
+        <div>
+            <label>Nome do personagem:</label>
+            <input type="text" name="personagem" required>
+        </div>
+        <div>
+            <label>Imagem:</label>
+            <input type="url" name="url" required>
+        </div>
+        <div>
+            <input type="submit" value="Adicionar" class="btn-add">
+        </div>
+        <div>
+            <input type="button" value="excluir personagem" class="btn-add" onclick="excluirPersonagem()">
+
+    </form>
+
+    <div id="personagens" class="img">
+        
+    </div>
+</body>
+
+</html>
