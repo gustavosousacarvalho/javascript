@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Armas</title>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .form1{
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+        .form1 div{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form2{
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+        .form2 div{
+            display: flex;
+            flex-direction: column;
+        }
+        label{
+            margin-top: 5px;
+        }
+
+        .form-btn{
+            display: flex;
+            width: 100%;
+            padding-left: 200px;           
+        }
+
+        .btn{
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cadastro de arma</h1>
+    <form name="form" class="container">
+        <div class="form1">
+            <div>
+                <label>Nome:</label>
+                <input type="text" name="">
+            </div>
+            <div>
+                <label>Quantidade de balas:</label>
+                <input type="number" name="">
+            </div>
+            <div>
+                <label>Numero do registro:</label>
+                <input type="number">
+            </div>
+        </div>
+        <div class="form2">
+            <div>
+                <label>Data de fabricação:</label>
+                <input type="date">
+            </div>
+            <div>
+                <label>Imagem da arma:</label>
+                <input type="url">
+            </div>
+        </div>
+        <div class="form-btn">
+            <input type="submit" value="Salvar" class="btn">
+        </div>
+    </form>
+</body>
+
+</html>
