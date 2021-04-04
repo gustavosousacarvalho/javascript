@@ -43,26 +43,27 @@
         }
 
         #div1 {
+            display: flex;
+            flex-wrap: wrap;
             border: 1px solid black;
             width: 45%;
             height: 65%;
             background-color: FloralWhite;
-            position: absolute;
-            left: 27%;
             border-radius: 5px;
+            padding: 20px;
+            margin: 0 auto;
         }
 
         #div2 {
-            position: relative;
-            left: 19%;
+            margin-right: 10px;
+            margin-bottom: 5px;
             top: 2.5%;
             font-family: tahoma;
             font-size: 15px;
         }
 
         #div3 {
-            position: relative;
-            left: 53%;
+            left: 44%;
             top: -6%;
             font-family: tahoma;
             font-size: 15px;
@@ -78,10 +79,8 @@
         }
 
         #btn1 {
-            position: relative;
-            left: 32%;
-            width: 15%;
-            height: 12%;
+            padding: 5px;
+            margin: 10px;
             font-family: tahoma;
             border-radius: 2px;
             background: #1c72dc;
@@ -90,10 +89,8 @@
         }
 
         #btn2 {
-            position: relative;
-            left: 35%;
-            width: 15%;
-            height: 12%;
+            padding: 5px;
+            margin: 10px;
             font-family: tahoma;
             border-radius: 2px;
             background: #1c72dc;
@@ -113,10 +110,9 @@
         } */
 
         #div4 {
-            position: relative;
-            left: -1%;
-            top: 6%;
             text-align: center;
+            width: 100%;
+            margin-top: 10px;
         }
 
         #resultado {
@@ -133,17 +129,13 @@
             font-size: 12px;
         }
 
-        #div5 {
-            position: relative;
-            top: 15%;
-        }
     </style>
 </head>
 
 <body>
     <form>
         <div id="div1">
-            <h1>Conversão de real para outras moedas</h1>
+            <h1>Conversão de real para dólar</h1>
 
             <!--OPÇÕES DE MOEDAS PARA CONVERTER-->
             <div id="div2">
@@ -163,8 +155,10 @@
             </div>
 
             <!--botões CONVERTER E RESETAR-->
+           <div>
             <input type="button" value="Converter" id="btn1" onClick="conversao()" />
             <input type="reset" value="Limpar" id="btn2">
+           </div>
 
             <!--RESULTADO QUE SERÁ MOSTRADO NA TELA-->
             <div id="div4">
