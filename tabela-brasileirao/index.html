@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Brasileirão</title>
+    <script>
+        var times = []
+        function adicionarTime(event) {
+            event.preventDefault()
+            var time = document.form.time.value;
+            var pontos = document.form.pontos.value;
+            times.push({nome:time, pontos:pontos});
+
+            exibirTimes();
+            
+        }
+
+        function exibirTimes() {
+            times.sort(function(time1,time2){
+                return time1.pontos - time2.pontos;
+            })
+            var htmlTimes = ``;
+            times.forEach(time => {
+                htmlTimes += `<tr>
+                <td>${time.nome}</td>
+                <td>${time.pontos}</td>
+            </tr>` 
+            });
+            document.getElementById("times").innerHTML = htmlTimes;
+        }
+
+    </script>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .item{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+
+        .btn{
+            margin-top: 20px;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 500px;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabela Brasileirão</h1>
+    <form class="container" name="form" onsubmit="adicionarTime(event)">
+        <div class="item">
+            <label>Nome do time</label>
+            <input type="text" name="time" required>
+        </div>
+        <div class="item">
+            <label>Pontos</label>
+            <input type="number" name="pontos" required>
+        </div>
+        <div class="item">
+            <input type="submit" value="Adicionar" class="btn">
+        </div>
+    </form>
+    <table>
+        <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Pontos</th>
+                </tr>
+        </thead>
+        <tbody id="times">
+            
+        </tbody>
+    </table>
+</body>
+</html>
