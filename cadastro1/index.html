@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container-fild {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .item {
+            flex: 1;
+            min-width: 300px;
+
+        }
+
+        .item-2 {
+            min-width: 100%;
+            flex: 2;
+        }
+
+        input {
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        .input1{
+            width: 600px;
+        }
+
+        .btn-salvar {
+            width: 150px;
+            margin: 0 auto;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .coluna2{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="container">
+            <div class="item">
+                <div class="container-fild">
+                    <input type="text" placeholder="Seu nome" required>
+                </div>
+                <div class="container-fild">
+                    <input type="text" placeholder="Seu CPF" required>
+                </div>
+                <div class="container-fild">
+                    <input type="text" placeholder="Seu RG" required>
+                </div>
+            </div>
+            <div class="item coluna2">
+                <div class="container-fild">
+                    <input type="text" placeholder="Sua idade" required>
+                </div>
+                <div class="container-fild">
+                    <input type="tel" placeholder="Seu telefone" required>
+                </div>
+                <div class="container-fild">
+                    <input type="password" placeholder="Sua senha" required>
+                </div>
+
+            </div>
+            <div class="item item-2">
+                <div class="container-fild">
+                    <label>Assunto</label>
+                    <input type="text" class="input1" required>
+                </div>
+            </div>
+            <div class="item item-2">
+                <div class="container-fild">
+                    <input type="submit" value="Salvar" class="btn-salvar">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
