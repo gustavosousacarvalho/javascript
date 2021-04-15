@@ -18,9 +18,7 @@
         }
 
         function exibirTimes() {
-            times.sort(function(time1,time2){
-                return time1.pontos - time2.pontos;
-            })
+           
             var htmlTimes = ``;
             times.forEach(time => {
                 htmlTimes += `<tr>

@@ -10,18 +10,20 @@
         .container {
             display: flex;
             flex-wrap: wrap;
+            width: 750px;
         }
 
         .container-fild {
             display: flex;
-            flex-direction: column;
             margin-top: 10px;
-            margin-left: 10px;
+        }
+
+        body{
+            background: #ddd9d9;
         }
 
         .item {
             flex: 1;
-            min-width: 300px;
 
         }
 
@@ -31,12 +33,13 @@
         }
 
         input {
-            width: 200px;
+            width: 300px;
             border-radius: 5px;
+            padding: 7px;
         }
 
         .input1{
-            width: 600px;
+            width: 700px;
         }
 
         .btn-salvar {
@@ -46,9 +49,6 @@
             border-radius: 10px;
         }
 
-        .coluna2{
-            
-        }
     </style>
 </head>
 
@@ -80,8 +80,7 @@
             </div>
             <div class="item item-2">
                 <div class="container-fild">
-                    <label>Assunto</label>
-                    <input type="text" class="input1" required>
+                    <input type="text" class="input1" placeholder="Assunto" required>
                 </div>
             </div>
             <div class="item item-2">
