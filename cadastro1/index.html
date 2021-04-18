@@ -10,11 +10,12 @@
         .container {
             display: flex;
             flex-wrap: wrap;
-            width: 750px;
+            width: 500px;
         }
 
         .container-fild {
             display: flex;
+            flex: 1;
             margin-top: 10px;
         }
 
@@ -24,7 +25,11 @@
 
         .item {
             flex: 1;
+            
+        }
 
+        .coluna1{
+            margin-right: 10px;
         }
 
         .item-2 {
@@ -33,13 +38,13 @@
         }
 
         input {
-            width: 300px;
+            width: 100%;
             border-radius: 5px;
             padding: 7px;
         }
 
-        .input1{
-            width: 700px;
+        textarea{
+            width: 100%;
         }
 
         .btn-salvar {
@@ -55,7 +60,7 @@
 <body>
     <form>
         <div class="container">
-            <div class="item">
+            <div class="item coluna1">
                 <div class="container-fild">
                     <input type="text" placeholder="Seu nome" required>
                 </div>
@@ -80,7 +85,7 @@
             </div>
             <div class="item item-2">
                 <div class="container-fild">
-                    <input type="text" class="input1" placeholder="Assunto" required>
+                     <textarea placeholder="Assunto" cols="30" rows="8"></textarea>
                 </div>
             </div>
             <div class="item item-2">
