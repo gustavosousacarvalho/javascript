@@ -19,6 +19,8 @@
         * .pop()
         * .find()
         * .indexOf()
+        * .sort()
+        * .reduce
     * Object
 * Estruturas condicionas
     * if else
