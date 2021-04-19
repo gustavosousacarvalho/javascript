@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var produtos = [
+            {
+                nome: "feijão",
+                valor : 5.60
+            }
+        ]
+        function adicionaProduto(event) {
+            event.preventDefault()
+            var produto = document.form.produto.value;
+            var valor = document.form.valor.value;
+            produtos.push({ nome: produto, valor: valor });
+
+            exibirProduto();
+        };
+        function exibirProduto() {
+            var htmlProduto = ``;
+            times.forEach(time => {
+                htmlTimes += `<tr>
+                <td>${produto.nome}</td>
+                <td>${produto.pontos}</td>
+            </tr>`
+            });
+            document.getElementById("produtos").innerHTML = htmlProduto;
+        }
+        
+    </script>
+</head>
+<body>
+    <form name="form" onsubmit="adicionarProduto(event)">
+        <div>
+            <label>Nome do produto:</label>
+            <input type="text" name="produto" required>
+        </div>
+        <div>
+            <label>Valor</label>
+            <input type="number" name="valor" required>
+        </div>
+        <div>
+            <input type="submit" value="Adicionar">
+        </div>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody id="produtos">
+
+        </tbody>
+    </table>
+</body>
+</html>
