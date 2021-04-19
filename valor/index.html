@@ -9,7 +9,7 @@
         var produtos = [
             {
                 nome: "feijão",
-                valor : 5.60
+                valor : 5.00
             }
         ]
         function adicionaProduto(event) {
@@ -22,8 +22,8 @@
         };
         function exibirProduto() {
             var htmlProduto = ``;
-            times.forEach(time => {
-                htmlTimes += `<tr>
+            produtos.forEach(produto => {
+                htmlProduto += `<tr>
                 <td>${produto.nome}</td>
                 <td>${produto.pontos}</td>
             </tr>`
@@ -34,7 +34,7 @@
     </script>
 </head>
 <body>
-    <form name="form" onsubmit="adicionarProduto(event)">
+    <form name="form" onsubmit="adicionaProduto(event)">
         <div>
             <label>Nome do produto:</label>
             <input type="text" name="produto" required>
