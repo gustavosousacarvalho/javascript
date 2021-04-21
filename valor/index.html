@@ -14,16 +14,28 @@
             produtos.push({ nome: produto, valor: valor });
 
             exibirProduto();
+            
         };
         function exibirProduto() {
             var htmlProduto = ``;
             produtos.forEach(produto => {
                 htmlProduto += `<tr>
                 <td>${produto.nome}</td>
-                <td>${produto.pontos}</td>
+                <td>${produto.valor}</td>
             </tr>`
             });
             document.getElementById("produtos").innerHTML = htmlProduto;
+        }
+
+        function calcularPreco() {
+            var preço = Number(document.form.valor.value);
+
+            var valorFinal = preço + preço;
+            
+               if (valorFinal > 0) {
+                document.getElementById("resultado").textContent = "Total a Pagar: " + valorFinal.toLocaleString("pt-br", { style: "currency", currency: "BRL" })
+
+               }
         }
         
     </script>
@@ -62,17 +74,20 @@
     </style>
 </head>
 <body>
-    <form class="container" name="form" onsubmit="adicionarTime(event)">
+    <form class="container" name="form" onsubmit="adicionaProduto(event)">
         <div class="item">
             <label>Produto:</label>
             <input type="text" name="produto" required>
         </div>
         <div class="item">
             <label>valor:</label>
-            <input type="number" name="valor" required>
+            <input type="text" name="valor" required>
         </div>
         <div class="item">
             <input type="submit" value="Adicionar" class="btn">
+        </div>
+        <div class="item">
+            <input type="button" value="Calcular Preço" class="btn" onclick="calcularPreco()">
         </div>
     </form>
     <table>
@@ -86,5 +101,6 @@
 
         </tbody>
     </table>
+    <h2 id="resultado">Resultado</h2>
 </body>
 </html>
