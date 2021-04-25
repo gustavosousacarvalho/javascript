@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha</title>
+    <script>
+        var matrizes = [
+            ["", "", ""],
+            ["", "", ""],
+            ["", "", ""]
+        ]
+
+        window.onload = function () {
+            exibir()
+        }
+        function exibir() {
+            var html = "";
+            matrizes.forEach((linha, index) => {
+                html += `<button onclick="jogada(${index},0)">${linha[0]}</button>
+                <button onclick="jogada(${index},1)">${linha[1]}</button> 
+                <button onclick="jogada(${index},2)">${linha[2]}</button>
+                `
+            });
+            document.getElementById("jogo-velha").innerHTML = html;
+        }
+
+        function jogada(indexMatrix, indexLinha) {
+            if (matrizes[indexMatrix][indexLinha] == "x") {
+                matrizes[indexMatrix][indexLinha] = "o"
+            } else if (matrizes[indexMatrix][indexLinha] == "o") {
+                matrizes[indexMatrix][indexLinha] = "x"
+            } else {
+                matrizes[indexMatrix][indexLinha] = "x"
+            }
+            exibir()
+        }
+    </script>
+    <style>
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            width: 200px;
+        }
+
+        button {
+            padding: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="jogo-velha">
+
+    </div>
+</body>
+
+</html>
