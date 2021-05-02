@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
     <script>
-        var hotel = []
+        var aprt = [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+        ];
+        window.onload = function () {
+            document.getElementById("app").innerHTML = aprt.toString()
+
+        }
+        function escolherAp() {
+            var pessoa = prompt("Numero do apartamento")
+            if (pessoa.length >= 3) {
+                aprtm.push(pessoa);
+                document.getElementById("app").innerHTML = aprt.toString()
+            }
+            apEscolhido()
+        }
+        function apEscolhido() {
+            aprt.pop();
+            document.getElementById("app").innerHTML = aprt.toString()
+        }
     </script>
+    <style>
+        button{
+            margin: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <form>
-       <div>
-           
-       </div> 
-    </form>
+    <h1>Escolher apartamento</h1>
+    <h4>Apartamentos disponiveis</h4>
+    <div id="app"></div>
+    <button onclick="escolherAp()">Escolher app</button>
 </body>
+
 </html>
