@@ -7,39 +7,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
     <script>
-        var aprt = [
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        var apartamentos = [
+            "Gustavo",
+            "Jubileu",
+            "Desocupado",
+            "Desocupado",
+            "Desocupado",
+            "Desocupado",
+            "Desocupado",
+            "Desocupado",
+            "Desocupado",
+            "Desocupado",
 
         ];
-        window.onload = function () {
-            document.getElementById("app").innerHTML = aprt.toString()
+        function exibirAps() {
+            var html = "";
+            apartamentos.forEach((hospede, index) => {
+                html += ` 
+                 <tr>
+                <td>${index+1}</td>
+                <td>${hospede}</td>
+            </tr>`
+            });
+            document.getElementById("hospedes").innerHTML = html;
+        }
+        function hospedar(event) {
+            event.preventDefault()
 
-        }
-        function escolherAp() {
-            var pessoa = prompt("Numero do apartamento")
-            if (pessoa.length >= 3) {
-                aprtm.push(pessoa);
-                document.getElementById("app").innerHTML = aprt.toString()
+            var numeroAp = document.form.numeroAp.value
+            var hospede = document.form.hospede.value;
+            if (apartamentos[numeroAp-1] == "Desocupado") {
+                apartamentos[numeroAp-1] = hospede;
+            }else{
+                alert(" Apartamento ocupado escolha outro ")
             }
-            apEscolhido()
+
+            exibirAps();
+            
         }
-        function apEscolhido() {
-            aprt.pop();
-            document.getElementById("app").innerHTML = aprt.toString()
+        window.onload = function() {
+            exibirAps()
         }
     </script>
     <style>
-        button{
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 500px;
+        }
+
+        td,
+        th {
+            width: 20px;
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
             margin: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin-bottom: 60px;
+        }
+
+        .botao {
+            flex: 1;
+            justify-content: center;
+            width: 100px;
+            padding: 5px;
+            align-self: center;
+            margin-top: 10px;
+            border-radius: 4px;
         }
     </style>
 </head>
 
 <body>
     <h1>Escolher apartamento</h1>
+    <form name="form" onsubmit="hospedar(event)">
+        <div>
+            <label>N ap</label>
+            <select name="numeroAp">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div>
+            <label>Hospede</label>
+            <input type="text" name="hospede">
+        </div>
+        <div>
+            <input type="submit" value="Hospedar" class="botao">
+        </div>
+
+    </form>
     <h4>Apartamentos disponiveis</h4>
-    <div id="app"></div>
-    <button onclick="escolherAp()">Escolher app</button>
+    <table id="ap">
+        <thead>
+            <tr>
+                <th>N ap</th>
+                <th>Hospede</th>
+            </tr>
+        </thead>
+        <tbody id="hospedes">
+            <tr>
+                <td>05</td>
+                <td>Jubileu</td>
+            </tr>
+            <tr>
+                <td>07</td>
+                <td>Cresoaldo</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>
