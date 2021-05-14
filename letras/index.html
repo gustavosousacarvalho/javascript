@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de letras</title>
+    <script>
+
+        function calcularCaracs(event) {
+            event.preventDefault();
+            var nome = String(document.form.Nome.value);
+            
+                alert("O Texto digitado tem " + nome.length + " caracteres");
+        }
+            
+    </script>
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+        }
+
+        input {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form" class="container" onsubmit="calcularCaracs(event)">
+        <label>Digite seu nome: </label>
+        <input type="text" name="Nome" id="">
+        <input type="submit" value="Calcular números de letras">
+    </form>
+</body>
+
+</html>
