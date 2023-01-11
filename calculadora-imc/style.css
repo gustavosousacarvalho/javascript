@@ -1,0 +1,10 @@
+.calculadora{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+
+}
+
+.button{
+    margin-bottom: 8px;
+}
