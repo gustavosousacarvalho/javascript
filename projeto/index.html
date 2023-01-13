@@ -8,10 +8,14 @@
     <title>Tarefas</title>
     <link rel="stylesheet" href="style.css">
     <script src="projeto.css"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />">
 </head>
 
 <body>
-    <div class="todo-conteiner">
+    <div class="todo-container">
         <header>
             <h1>Todo avançado</h1>
         </header>
@@ -24,7 +28,7 @@
                 </button>
             </div>
         </form>
-        <form id="edit-form">
+        <form id="edit-form" class="hide">
             <p>Edite sua tarefa</p>
             <div class="form-control">
                 <input type="text" id="edit-input">
@@ -38,7 +42,7 @@
             <div class="search">
                 <h4>Pesquisar:</h4>
                 <form>
-                    <input type="text" id="search-input" placeholder="Buscar"> 
+                    <input type="text" id="search-input" placeholder="Buscar">
                     <button id="erase-butto">
                         <i class="fa-solid fa-delete-left"></i>
                     </button>
@@ -46,11 +50,11 @@
             </div>
             <div id="filter">
                 <h4>Filtrar:</h4>
-                <selet id="filter-select">
+                <select id="filter-select">
                     <option value="all">Todos</option>
                     <option value="done">Feitos</option>
                     <option value="todo">A fazer</option>
-                </selet>
+                </select>
             </div>
 
         </div>
