@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <form name="form"> 
+    <form name="form" onsubmit="logar(event)"> 
         <div>
             <label>E-mail</label>
             <input type="email" name="email" required>
         </div>
         <div>
             <label>Senha</label>
-        <input type="password" name="senha" required>
+        <input type="password" name="senha" required minlength="4">
         </div>
         <input type="submit" value="Entrar">
     </form>

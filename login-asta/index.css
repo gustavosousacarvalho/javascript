@@ -1,11 +1,13 @@
 body{
     background-image:url(https://besthqwallpapers.com/Uploads/12-2-2021/153832/thumb2-asta-4k-wallpapers-with-names-female-names-asta-name.jpg);
+    background-size: 100%;
 }
 
 form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(211 44 175 / 32%);
     margin: 200px auto;
     width: 200px;
     padding: 10px;
