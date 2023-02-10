@@ -1,0 +1,13 @@
+.product {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .cart {
+    display: inline-block;
+    margin: 20px;
+    vertical-align: top;
+  }
+  
+  
