@@ -1,13 +1,30 @@
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #d10934, #0c0c0c);
+}
+
+h2{
+  margin: 0;
+}
+
 .product {
-    display: inline-block;
-    margin: 20px;
-    text-align: center;
-  }
-  
-  .cart {
-    display: inline-block;
-    margin: 20px;
-    vertical-align: top;
-  }
-  
-  
+  display: inline-block;
+  margin: 20px;
+  text-align: center;
+}
+
+.cart {
+  display: inline-block;
+  margin: 20px;
+  vertical-align: top;
+}
+
+img {
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
